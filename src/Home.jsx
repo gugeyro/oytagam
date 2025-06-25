@@ -1,44 +1,39 @@
+// src/Home.jsx
 import React from "react";
-import { Link } from "react-router-dom";
+import BottomNav from "./components/BottomNav";
 
 const categories = [
-  {
-    title: "Первое",
-    image: "/images/soup.jpg",
-    path: "/first",
-  },
-  {
-    title: "Второе",
-    image: "/images/plov.jpg",
-    path: "/second",
-  },
-  {
-    title: "Салаты",
-    image: "/images/salad.jpg",
-    path: "/salads",
-  },
-  {
-    title: "Десерты",
-    image: "/images/dessert.jpg",
-    path: "/desserts",
-  },
+  { name: "Первое", image: "/images/soup.jpg" },
+  { name: "Второе", image: "/images/plov.jpg" },
+  { name: "Салаты", image: "/images/salad.jpg" },
+  { name: "Десерты", image: "/images/dessert.jpg" },
 ];
 
-function Home() {
+export default function Home() {
   return (
-    <div className="min-h-screen bg-[#fff4e3] flex flex-col items-center text-center pb-20">
-      <h1 className="text-3xl font-bold text-blue-700 mt-8">Добро пожаловать в Öý Tagam!</h1>
-      <p className="mt-2 text-gray-700 text-lg">Домашняя еда от соседей — тепло, вкусно и по-доброму.</p>
+    <div className="min-h-screen flex flex-col justify-between bg-gradient-to-br from-lime-50 to-orange-100 pb-16">
+      <div className="text-center py-8">
+        <h1 className="text-3xl font-bold text-blue-700">Добро пожаловать в Öý Tagam!</h1>
+        <p className="text-lg text-gray-700 mt-2">
+          Домашняя еда от соседей — когда лень готовить самому!
+        </p>
+      </div>
 
-      <div className="grid grid-cols-2 gap-4 mt-8 max-w-3xl">
-        {categories.map((cat, index) => (
-          <Link
-            key={index}
-            to={cat.path}
-            className="bg-white rounded-xl shadow hover:shadow-md transition duration-300 overflow-hidden"
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 max-w-6xl mx-auto">
+        {categories.map((cat) => (
+          <div
+            key={cat.name}
+            className="rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition bg-white"
           >
-            <img src={cat.image} alt={cat.title} className="w-full h-40 object-cover" />
-            <p className="p-2 font-medium">{cat.title}</p>
-          </Link>
+            <img src={cat.image} alt={cat.name} className="w-full h-48 object-cover" />
+            <div className="p-4 text-center">
+              <h3 className="text-lg font-semibold text-gray-800">{cat.name}</h3>
+            </div>
+          </div>
         ))}
-      </di
+      </div>
+
+      <BottomNav />
+    </div>
+  );
+}

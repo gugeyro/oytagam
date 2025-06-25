@@ -1,19 +1,20 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// src/App.jsx
+import React, { useEffect } from "react";
 import Home from "./Home";
-import BottomNav from "./components/BottomNav";
+import "./App.css";
 
 function App() {
+  useEffect(() => {
+    if (window?.Telegram?.WebApp) {
+      window.Telegram.WebApp.ready();
+      window.Telegram.WebApp.expand();
+    }
+  }, []);
+
   return (
-    <Router>
-      <div className="min-h-screen flex flex-col bg-[#fff4e3]">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/* Добавьте другие маршруты здесь */}
-        </Routes>
-        <BottomNav />
-      </div>
-    </Router>
+    <div className="min-h-screen bg-gradient-to-br from-lime-50 to-orange-100">
+      <Home />
+    </div>
   );
 }
 
