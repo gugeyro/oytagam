@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply font-sans;
+  background: linear-gradient(to bottom, #e8f5e9, #fff3e0);
+}

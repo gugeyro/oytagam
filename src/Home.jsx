@@ -1,4 +1,5 @@
 import React from "react";
+import BottomNav from "../components/BottomNav";
 
 const categories = [
   {
@@ -19,28 +20,32 @@ const categories = [
   },
 ];
 
-export default function Home() {
+const CategoryCard = ({ title, image }) => (
+  <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+    <img src={image} alt={title} className="w-full h-36 object-cover" />
+    <div className="text-center py-3 font-semibold">{title}</div>
+  </div>
+);
+
+const Home = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-orange-100 p-6">
-      <div className="text-center mb-10">
-        <h1 className="text-4xl font-bold text-blue-700 mb-2">Добро пожаловать в Oytagam!</h1>
-        <p className="text-lg text-gray-700">
-          Домашняя еда от соседей — тепло, вкусно и по-доброму.
-        </p>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+    <div className="min-h-screen flex flex-col items-center pt-10 pb-24 bg-gradient-to-br from-yellow-50 to-orange-100 text-gray-800">
+      <h1 className="text-3xl font-bold text-blue-600 mb-2 text-center">
+        Добро пожаловать в Oytagam!
+      </h1>
+      <p className="mb-8 text-center text-lg">
+        Домашняя еда от соседей — тепло, вкусно и по-доброму.
+      </p>
+
+      <div className="grid grid-cols-2 gap-6 max-w-4xl px-4">
         {categories.map((cat) => (
-          <div
-            key={cat.name}
-            className="rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition"
-          >
-            <img src={cat.image} alt={cat.name} className="w-full h-48 object-cover" />
-            <div className="bg-white p-4 text-center">
-              <h3 className="text-lg font-semibold text-gray-800">{cat.name}</h3>
-            </div>
-          </div>
+          <CategoryCard key={cat.name} title={cat.name} image={cat.image} />
         ))}
       </div>
+
+      <BottomNav />
     </div>
   );
-}
+};
+
+export default Home;
