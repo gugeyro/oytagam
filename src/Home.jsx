@@ -1,4 +1,3 @@
-// src/Home.jsx
 import React from "react";
 import BottomNav from "./components/BottomNav";
 
@@ -11,10 +10,10 @@ const categories = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-gradient-to-br from-lime-50 to-orange-100 pb-16">
-      <div className="text-center py-6 px-4">
-        <h1 className="text-2xl font-bold text-blue-700">Öý Tagam!</h1>
-        <p className="text-base text-gray-700 mt-2">
+    <div className="min-h-screen flex flex-col justify-between bg-lime-50 pb-16">
+      <div className="text-center pt-6 px-4">
+        <h1 className="text-2xl font-bold text-blue-700">Добро пожаловать в Öý Tagam!</h1>
+        <p className="text-base text-gray-700 mt-2 mb-4">
           Домашняя еда от соседей — когда лень готовить самому!
         </p>
       </div>
