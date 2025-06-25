@@ -1,51 +1,44 @@
 import React from "react";
-import BottomNav from "../components/BottomNav";
+import { Link } from "react-router-dom";
 
 const categories = [
   {
-    name: "Первое",
+    title: "Первое",
     image: "/images/soup.jpg",
+    path: "/first",
   },
   {
-    name: "Второе",
+    title: "Второе",
     image: "/images/plov.jpg",
+    path: "/second",
   },
   {
-    name: "Салаты",
+    title: "Салаты",
     image: "/images/salad.jpg",
+    path: "/salads",
   },
   {
-    name: "Десерты",
+    title: "Десерты",
     image: "/images/dessert.jpg",
+    path: "/desserts",
   },
 ];
 
-const CategoryCard = ({ title, image }) => (
-  <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
-    <img src={image} alt={title} className="w-full h-36 object-cover" />
-    <div className="text-center py-3 font-semibold">{title}</div>
-  </div>
-);
-
-const Home = () => {
+function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center pt-10 pb-24 bg-gradient-to-br from-yellow-50 to-orange-100 text-gray-800">
-      <h1 className="text-3xl font-bold text-blue-600 mb-2 text-center">
-        Добро пожаловать в Oytagam!
-      </h1>
-      <p className="mb-8 text-center text-lg">
-        Домашняя еда от соседей — тепло, вкусно и по-доброму.
-      </p>
+    <div className="min-h-screen bg-[#fff4e3] flex flex-col items-center text-center pb-20">
+      <h1 className="text-3xl font-bold text-blue-700 mt-8">Добро пожаловать в Öý Tagam!</h1>
+      <p className="mt-2 text-gray-700 text-lg">Домашняя еда от соседей — тепло, вкусно и по-доброму.</p>
 
-      <div className="grid grid-cols-2 gap-6 max-w-4xl px-4">
-        {categories.map((cat) => (
-          <CategoryCard key={cat.name} title={cat.name} image={cat.image} />
+      <div className="grid grid-cols-2 gap-4 mt-8 max-w-3xl">
+        {categories.map((cat, index) => (
+          <Link
+            key={index}
+            to={cat.path}
+            className="bg-white rounded-xl shadow hover:shadow-md transition duration-300 overflow-hidden"
+          >
+            <img src={cat.image} alt={cat.title} className="w-full h-40 object-cover" />
+            <p className="p-2 font-medium">{cat.title}</p>
+          </Link>
         ))}
-      </div>
-
-      <BottomNav />
-    </div>
-  );
-};
-
-export default Home;
+      </di
