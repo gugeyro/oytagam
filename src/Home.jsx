@@ -10,10 +10,10 @@ const categories = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-emerald-50 pb-16">
-      <div className="text-center pt-3 px-4">
-        <h1 className="text-xl font-bold text-blue-700">Öý Tagam</h1>
-        <p className="text-sm text-gray-700 mt-1 mb-1">
+    <div className="min-h-screen bg-emerald-50 pb-16">
+      <div className="text-center pt-2 px-3">
+        <h1 className="text-xl font-bold text-blue-700 leading-tight">Öý Tagam</h1>
+        <p className="text-sm text-gray-700 mt-1 mb-2 leading-snug">
           Домашняя еда от соседей — когда лень готовить самому!
         </p>
       </div>
@@ -27,7 +27,7 @@ export default function Home() {
             <img
               src={cat.image}
               alt={cat.name}
-              className="w-full h-28 object-cover"
+              className="w-full h-24 object-cover"
             />
             <div className="p-1 text-center">
               <h3 className="text-sm font-semibold text-gray-800">{cat.name}</h3>
