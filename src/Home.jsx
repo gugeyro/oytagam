@@ -13,7 +13,7 @@ export default function Home() {
     <div className="min-h-screen bg-emerald-50 pb-16">
       <div className="text-center pt-2 px-3">
         <h1 className="text-xl font-bold text-blue-700 leading-tight">Öý Tagam</h1>
-        <p className="text-sm text-gray-700 mt-1 mb-2 leading-snug">
+        <p className="text-sm text-gray-700 mt-1 mb-4 leading-snug">
           Домашняя еда от соседей — когда лень готовить самому!
         </p>
       </div>
