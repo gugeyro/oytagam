@@ -10,10 +10,10 @@ const categories = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-lime-50 pb-16">
-      <div className="text-center pt-6 px-4">
+    <div className="min-h-screen flex flex-col justify-between bg-emerald-50 pb-16">
+      <div className="text-center pt-4 px-4">
         <h1 className="text-2xl font-bold text-blue-700">Öý Tagam</h1>
-        <p className="text-base text-gray-700 mt-2 mb-3">
+        <p className="text-base text-gray-700 mt-1 mb-2">
           Домашняя еда от соседей — когда лень готовить самому!
         </p>
       </div>
