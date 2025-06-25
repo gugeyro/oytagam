@@ -13,12 +13,12 @@ export default function Home() {
     <div className="min-h-screen flex flex-col justify-between bg-lime-50 pb-16">
       <div className="text-center pt-6 px-4">
         <h1 className="text-2xl font-bold text-blue-700">Öý Tagam</h1>
-        <p className="text-base text-gray-700 mt-2 mb-4">
+        <p className="text-base text-gray-700 mt-2 mb-3">
           Домашняя еда от соседей — когда лень готовить самому!
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 px-4 max-w-md mx-auto">
+      <div className="grid grid-cols-2 gap-2 px-4 max-w-md mx-auto">
         {categories.map((cat) => (
           <div
             key={cat.name}
