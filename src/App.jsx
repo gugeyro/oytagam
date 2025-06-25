@@ -1,7 +1,21 @@
-export default function App() {
+// src/App.jsx
+import { useEffect, useState } from "react";
+import Hero from "./components/Hero";
+
+function App() {
+  const [userName, setUserName] = useState("");
+
+  useEffect(() => {
+    if (window?.Telegram?.WebApp?.initDataUnsafe?.user?.first_name) {
+      setUserName(window.Telegram.WebApp.initDataUnsafe.user.first_name);
+    }
+  }, []);
+
   return (
-    <div className="text-3xl font-bold text-blue-600 p-4">
-      Tailwind работает!
+    <div className="min-h-screen bg-white">
+      <Hero userName={userName} />
     </div>
   );
 }
+
+export default App;
